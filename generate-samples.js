@@ -7,7 +7,7 @@ const validator = require('./lib/schema');
 
 // Constants
 const outputDir = 'out/';
-const baseDir = '../';
+const baseDir = './';
 
 /**
  * Process yaml file and translate into JSON. Output in output/ directory.
