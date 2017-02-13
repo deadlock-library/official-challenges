@@ -9,4 +9,4 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]
     exit 0
 fi
 
-openssl aes-256-cbc -K $encrypted_20aefe02d3a5_key -iv $encrypted_20aefe02d3a5_iv -in deploy_key.enc -out deploy_key -d
+openssl aes-256-cbc -K $encrypted_89cbd1a3bff1_key -iv $encrypted_89cbd1a3bff1_iv -in deploy_key.enc -out deploy_key -d
