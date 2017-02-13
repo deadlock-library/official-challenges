@@ -1,7 +1,7 @@
-name: ${project.name}
-label: ${project.label}
-description: ${project.description}
-level: ${project.level}
+name: coding_postgresql_rw
+label: Forget about Hotmail
+description: A challenge where you will have to remove all users who have a hotmail email from a database
+level: jarjarbinks
 type: CODING
 xp:
   # Replace this with the weighted skills that the challenge should bring.

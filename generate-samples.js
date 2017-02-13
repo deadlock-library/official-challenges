@@ -24,7 +24,7 @@ var processYaml = function (f) {
   } else {
     console.log("File " + f + " is valid. Will be parsed as preset.");
   }
-  return {"name": parsed.name, "description": parsed.description, "revision": parsed.revision, "author": parsed.author, "keywords": parsed.keywords};
+  return {"name": parsed.name, "description": parsed.description, "revision": parsed.revision, "author": parsed.author, "keywords": parsed.keywords, "type": parsed.type};
 };
 
 /**

@@ -1,5 +1,6 @@
 name: coding_java
 description: An implementation of a Java challenge, with an external seed file.
+type: CODING
 keywords:
  - java
  - file

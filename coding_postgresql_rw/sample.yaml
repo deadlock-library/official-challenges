@@ -1,5 +1,6 @@
 name: coding_postgresql_rw
 description: "A Challenge skeleton for PostgreSQL, with a side-loaded sql file. This challenge allows to perform schema & db changes (read & writes)."
+type: CODING
 revision: 1
 keywords:
  - sql
