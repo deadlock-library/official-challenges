@@ -1,0 +1,9 @@
+import java.util.List;
+import java.util.Map;
+
+public class SpellingBackwards {
+  // TODO change with your own Compile Error template
+  public static
+  Yes, this should give a compile error
+
+}

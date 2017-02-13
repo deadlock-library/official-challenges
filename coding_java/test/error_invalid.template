@@ -1,0 +1,9 @@
+
+public class SpellingBackwards {
+
+  public static String readBackwards(String randomLine) {
+    // TODO change with your own Invalid Error template
+    return randomLine;
+  }
+
+}

@@ -1,0 +1,17 @@
+name: ${project.name}
+label: ${project.label}
+description: ${project.description}
+level: ${project.level}
+type: CODING
+xp:
+  # Replace this with the weighted skills that the challenge should bring.
+  # This sample gives the candidate 1/3 of java skills, 2/3 of programming skills.
+  java: 1
+  programming: 2
+coding:
+  # Replace this with your template file.
+  template: /Template.java
+  # Replace this if you need to change the target file path where code will be uploaded
+  target: /SpellingBackwards.java
+  # Replace this with the target language syntax highlighter for the web editor.
+  editorMode: java

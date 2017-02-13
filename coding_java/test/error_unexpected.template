@@ -1,0 +1,11 @@
+
+import java.lang.*;
+
+public class SpellingBackwards {
+
+  public static String readBackwards(String randomLine) {
+    // TODO change with your own Unexpected Error template
+    throw new UnsupportedOperationException("Oops!");
+  }
+
+}
