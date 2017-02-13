@@ -1,3 +1,16 @@
 name: coding_postgresql_rw
-description: A Challenge skeleton for PostgreSQL, with a side-loaded sql file. This challenge allows to perform schema & db changes (read & writes).
-keywords: sql, postgresql, postgre, query, mysql, database, db, rw, insert, update, delete
+description: "A Challenge skeleton for PostgreSQL, with a side-loaded sql file. This challenge allows to perform schema & db changes (read & writes)."
+revision: 1
+keywords:
+ - sql
+ - postgresql
+ - postgre
+ - query
+ - mysql
+ - database
+ - db
+ - rw
+ - insert
+ - update
+ - delete
+author: Loic Ortola (contact@loicortola.com)
