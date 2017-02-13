@@ -1,0 +1,2 @@
+SELECT id FROM public."user" LIMIT 10;
+SELECT id FROM public."matches" LIMIT 10;
