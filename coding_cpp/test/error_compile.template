@@ -1,0 +1,7 @@
+#include "spelling-backwards.h"
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+string SpellingBackwards::read_backwards(const string line) {

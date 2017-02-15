@@ -1,0 +1,12 @@
+name: coding_java
+description: An implementation of a Java challenge, with an external seed file.
+type: CODING
+keywords:
+ - java
+ - file
+ - jdk
+ - jvm
+ - challenge
+ - simple
+revision: 1
+author: Loic Ortola (contact@loicortola.com)

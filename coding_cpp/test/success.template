@@ -1,0 +1,10 @@
+#include "spelling-backwards.h"
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+string SpellingBackwards::read_backwards(string& phrase) {
+  std::reverse(phrase.begin(), phrase.end());
+  return phrase;
+}
