@@ -134,84 +134,20 @@ public class ScriptRunner {
           || fullLineDelimiter
           && trimmedLine.equals(getDelimiter())) {
           queryId++;
-          println("====================================================");
-          if (!comparisonOnly) {
-            println("Query " + queryId);
-          } else {
-            println("Check Query " + queryId);
-          }
           command.append(line.substring(0, line.lastIndexOf(getDelimiter())));
           command.append(" ");
-          Statement statement = conn.createStatement();
-          if (!comparisonOnly) {
-            println(command);
-          }
-          StringBuilder resultContent = new StringBuilder();
-          boolean hasResults = false;
-          if (stopOnError) {
-            hasResults = statement.execute(command.toString());
-          } else {
-            try {
-              statement.execute(command.toString());
-            } catch (SQLException e) {
-              e.fillInStackTrace();
-              printlnError("Error executing: " + command);
-              printlnError(e);
-            }
-          }
-
-          ResultSet rs = statement.getResultSet();
-          if (hasResults && rs != null) {
-            println("----------------------------------------------------");
-            ResultSetMetaData md = rs.getMetaData();
-            int cols = md.getColumnCount();
-            for (int i = 0; i < cols; i++) {
-              String name = md.getColumnLabel(i + 1);
-              resultContent.append(name + "\t|\t");
-              print(name + "\t|\t");
-            }
-            resultContent.append("\r\n");
-            println("");
-            int count = 0;
-            while (rs.next()) {
-              for (int i = 0; i < cols; i++) {
-                String value = rs.getString(i + 1).replaceAll("\r", "").replaceAll("\n", "");
-                resultContent.append(value + "\t|\t");
-                if ((!comparisonOnly && count < 100) || (comparisonOnly && count < 10)) {
-                  print(value + "\t|\t");
-                }
-              }
-              resultContent.append("\r\n");
-              if ((!comparisonOnly && count < 100) || (comparisonOnly && count < 10)) {
-                println("");
-              }
-              count++;
-            }
-            if (comparisonOnly && count > 10 || count > 100) {
-              println("[[More Entries Hidden]]\r\n");
-            }
-            println("----------------------------------------------------");
-            println("Returned " + count + " rows with " + cols + " columns.");
-            QueryResult result = new QueryResult(queryId, command.toString(), cols, count, resultContent.toString());
-            if (comparisonOnly) {
-              result.setHidden(true);
-            }
-            results.add(result);
-          } else {
-            println("Updated " + statement.getUpdateCount() + " rows.");
-          }
-
+          executeCommand(conn, comparisonOnly, command, queryId, line);
           command = null;
-          try {
-            statement.close();
-          } catch (Exception e) {
-          }
           Thread.yield();
         } else {
           command.append(line);
           command.append(" ");
         }
         flush();
+      }
+      if (command != null && !command.toString().trim().isEmpty()) {
+        queryId++;
+        executeCommand(conn, comparisonOnly, command, queryId, line);
       }
     } catch (SQLException e) {
       e.fillInStackTrace();
@@ -227,6 +163,79 @@ public class ScriptRunner {
       throw e;
     } finally {
       flush();
+    }
+  }
+
+  private void executeCommand(Connection conn, boolean comparisonOnly, StringBuffer command, int queryId, String line) throws SQLException {
+    println("====================================================");
+    if (!comparisonOnly) {
+      println("Query " + queryId);
+    } else {
+      println("Check Query " + queryId);
+    }
+    Statement statement = conn.createStatement();
+    if (!comparisonOnly) {
+      println(command);
+    }
+    StringBuilder resultContent = new StringBuilder();
+    boolean hasResults = false;
+    if (stopOnError) {
+      hasResults = statement.execute(command.toString());
+    } else {
+      try {
+        statement.execute(command.toString());
+      } catch (SQLException e) {
+        e.fillInStackTrace();
+        printlnError("Error executing: " + command);
+        printlnError(e);
+      }
+    }
+
+    ResultSet rs = statement.getResultSet();
+    if (hasResults && rs != null) {
+      println("----------------------------------------------------");
+      ResultSetMetaData md = rs.getMetaData();
+      int cols = md.getColumnCount();
+      for (int i = 0; i < cols; i++) {
+        String name = md.getColumnLabel(i + 1);
+        resultContent.append(name + "\t|\t");
+        print(name + "\t|\t");
+      }
+      resultContent.append("\r\n");
+      println("");
+      int count = 0;
+      while (rs.next()) {
+        for (int i = 0; i < cols; i++) {
+          String value = rs.getString(i + 1).replaceAll("\r", "").replaceAll("\n", "");
+          resultContent.append(value + "\t|\t");
+          if ((!comparisonOnly && count < 100) || (comparisonOnly && count < 10)) {
+            print(value + "\t|\t");
+          }
+        }
+        resultContent.append("\r\n");
+        if ((!comparisonOnly && count < 100) || (comparisonOnly && count < 10)) {
+          println("");
+        }
+        count++;
+      }
+      if (comparisonOnly && count > 10 || count > 100) {
+        println("[[More Entries Hidden]]\r\n");
+      }
+      println("----------------------------------------------------");
+      println("Returned " + count + " rows with " + cols + " columns.");
+      QueryResult result = new QueryResult(queryId, command.toString(), cols, count, resultContent.toString());
+      if (comparisonOnly) {
+        result.setHidden(true);
+      }
+      results.add(result);
+    } else {
+      println("Updated " + statement.getUpdateCount() + " rows.");
+    }
+
+    command = null;
+    try {
+      statement.close();
+    } catch (Exception e) {
     }
   }
 

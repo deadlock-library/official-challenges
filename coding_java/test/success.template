@@ -1,7 +1,7 @@
 
 public class SpellingBackwards {
 
-  public static String readBackwards(String randomLine) {
+  public static String readBackwards(String phrase) {
     // TODO change with your own Success template. This should be one of the possible solutions.
     char[] reversePhrase = phrase.toCharArray();
     for (int i = 0; i < Math.floor(reversePhrase.length / 2); i++) {

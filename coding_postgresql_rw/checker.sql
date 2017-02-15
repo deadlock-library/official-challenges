@@ -1,7 +1,7 @@
 -- check total count
 SELECT COUNT(*)
-FROM public."users";
+FROM public."user";
 -- check count for hotmail users (should be 0)
 SELECT COUNT(*)
-FROM public."users"
+FROM public."user"
 WHERE email LIKE '%@hotmail.com'
