@@ -1,0 +1,3 @@
+name: db
+exposed_ports:
+  - 5432
