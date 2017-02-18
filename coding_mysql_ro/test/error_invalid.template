@@ -1,0 +1,2 @@
+SELECT latitude, longitude FROM user
+WHERE nickname LIKE 'J'

@@ -1,0 +1,14 @@
+name: coding_mysql_ro
+description: A Challenge skeleton for MySQL, with a side-loaded sql file. This challenge allows to perform select statements (read only).
+type: CODING
+keywords:
+ - sql
+ - mysql
+ - mariadb
+ - query
+ - database
+ - db
+ - ro
+ - select
+revision: 1
+author: Loic Ortola (contact@loicortola.com)

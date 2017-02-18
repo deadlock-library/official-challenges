@@ -1,0 +1,17 @@
+name: coding_mysql_ro
+label: Locate the thief
+description: Your phone was just stolen, but your hacking skills will get to the bottom of it
+level: jarjarbinks
+type: CODING
+xp:
+  # Replace this with the weighted skills that the challenge should bring.
+  # This sample gives the candidate 1/2 of SQL skills, 1/2 of programming skills.
+  sql: 1
+  programming: 1
+coding:
+  # Replace this with your template file.
+  template: /query.sql.template
+  # Replace this if you need to change the target file path where code will be uploaded
+  target: /query.sql
+  # Replace this with the target language syntax highlighter for the web editor.
+  editorMode: sql
