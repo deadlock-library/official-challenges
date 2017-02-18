@@ -1,11 +1,12 @@
-name: coding_java
-description: An implementation of a Java challenge, with an external seed file.
+name: coding_cpp
+description: An implementation of a C++ challenge, with an external seed file.
 type: CODING
 keywords:
- - java
+ - c++
  - file
- - jdk
- - jvm
+ - c
+ - c++1
+ - cpp
  - challenge
  - simple
 revision: 1

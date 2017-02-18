@@ -23,7 +23,7 @@ public class App {
         String target = SpellingBackwards.readBackwards(randomLine);
         if (!reference.equals(target)) {
           Logger.logNoMatch(reference, target);
-          return 1;
+          return -1;
         } else {
           Logger.logSuccess();
           return 0;
