@@ -1,0 +1,17 @@
+name: coding_python
+label: Esrever Python
+description: "It's like moonwalking, except for words"
+level: jarjarbinks
+type: CODING
+xp:
+  # Replace this with the weighted skills that the challenge should bring.
+  # This sample gives the candidate 1/3 of python skills, 2/3 of programming skills.
+  python: 1
+  programming: 2
+coding:
+  # Replace this with your template file.
+  template: /template.py
+  # Replace this if you need to change the target file path where code will be uploaded
+  target: /spelling_backwards.py
+  # Replace this with the target language syntax highlighter for the web editor.
+  editorMode: python

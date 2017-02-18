@@ -1,0 +1,11 @@
+name: coding_python
+description: An implementation of a Python challenge, with an external seed file.
+type: CODING
+keywords:
+ - python
+ - file
+ - pip
+ - challenge
+ - simple
+revision: 1
+author: Loic Ortola (contact@loicortola.com)
