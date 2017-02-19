@@ -1,5 +1,5 @@
 # What the sample contains
-This sample contains a full implementation of a PostgreSQL challenge for select-operations (read only).  
+This sample contains a full implementation of a MySQL challenge for select-operations (read only).  
 
 There are two kinds of Database challenges:
  * Those which only include "read" queries (**SELECT**)

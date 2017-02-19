@@ -4,7 +4,7 @@
 This app allows to check between an expected sql result and a sql query provided by the user.
 
 This tutorial will allow you to insert entries in a temporary database, before it actually dumps the data into a sql file.
-Then, you can use this file as an input to your postgresql container.
+Then, you can use this file as an input to your mysql container.
 
 ## Howto
 
