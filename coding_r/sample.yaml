@@ -1,0 +1,10 @@
+name: coding_r
+description: An implementation of a R challenge, with an external seed file.
+type: CODING
+keywords:
+ - R
+ - file
+ - challenge
+ - simple
+revision: 1
+author: Damien Lesignac (dlesignac@e-biz.fr)
