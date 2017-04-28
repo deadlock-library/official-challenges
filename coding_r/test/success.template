@@ -1,0 +1,5 @@
+
+
+SpellingBackwards.read_backwards <- function(s) {
+  paste(rev(strsplit(s, NULL)[[1]]), collapse = '')
+}
